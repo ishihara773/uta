@@ -1,0 +1,8 @@
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %> 
+  <p>タイトル</p>
+  <span><%= link_to post.title, post_path(post) %></span><br>
+  <% if post.image.attached? %>
+    <%= image_tag post.image, style: "width:400px; height:300px; object-fit:cover;" %>
+  <% end %><br>
+<% end %>

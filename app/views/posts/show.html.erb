@@ -1,0 +1,12 @@
+<h2>タイトル</h2>
+<p><%= @post.title %></p>
+<h2>コメント</h2>
+<p><%= @post.text %></p>
+<h2>画像</h2>
+<% if @post.image.attached? %>
+  <%= image_tag @post.image, style: "width:400px; height:300px; object-fit:cover;" %>
+<% end %><br>
+
+<%= link_to '投稿一覧' ,posts_path %>
+<%= link_to '削除する', post_path(@post.id),  data: { turbo_method: :delete, turbo_confirm:  "本当に消しますか？"} %>
+<%= link_to '編集する',edit_post_path(@post.id) %>

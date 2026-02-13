@@ -65,3 +65,17 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+#rails sできない
+group :development do
+  gem "listen", "~> 3.9"
+end
+
+#11章
+gem "image_processing", "~> 1.2"
+gem 'bootstrap', '~> 5.3.0'
+gem 'jquery-rails'
+gem "sassc-rails"
+
+
+
