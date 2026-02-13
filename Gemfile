@@ -77,5 +77,10 @@ gem 'bootstrap', '~> 5.3.0'
 gem 'jquery-rails'
 gem "sassc-rails"
 
+#13章
+gem 'devise'
+gem 'kaminari'
+
+
 
 

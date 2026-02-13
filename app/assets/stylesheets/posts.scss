@@ -44,6 +44,29 @@ h1 {
   margin-left: 2.5rem!important;
 }
 
+//ページネーション
+.page a,
+.next a,
+.last a,
+.first a,
+.prev a {
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page a:hover,
+.next a:hover,
+.last a:hover,
+.first a:hover,
+.prev a:hover {
+  color: black;
+}
+
+.current {
+  font-weight: bold;
+}
+
 //投稿詳細
 .cover-show {
     height: 100%;
