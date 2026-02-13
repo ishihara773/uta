@@ -1,4 +1,4 @@
-# musiclyrics
+# 詩
 <img width="1800" height="1800" alt="musiclyrics-logo" src="https://github.com/user-attachments/assets/aa133d82-9566-488c-8d7e-3747aac837b6" />
 
 ## 概要
