@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
+  #get 'users/index'
+  #get 'users/show'
   devise_for :users
+  resources :users, only:[:index, :show, :edit, :update] do
+    member do
+      get :follows, :followers
+    end
+    resource :relationships, only: [:create, :destroy]
+  end
   #get 'posts/new'
   #post 'posts' => 'posts#create'
-  resources :posts #まとめてやってくれる
+  #resources :posts #まとめてやってくれる 下に変更　ポストをコメントにくっつける
+  #いいねもくっつける感じ　ポスト：Nの関係
+  resources :posts do
+    resources :comments, only:[:create, :destroy]
+    resource :favorites, only:[:create, :destroy]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,4 +26,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   #get 'top' => 'homes#top'
   root :to => 'homes#top'   #この行を記述
+
 end
