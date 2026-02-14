@@ -7,10 +7,12 @@ class Post < ApplicationRecord
     has_many :favorites, dependent: :destroy
     
     #チェック機能
-    validates :location, presence: true, length: { maximum: 15 }
+    validates :title, presence: true, length: { maximum: 15 }
     validates :text, presence: true, length: { maximum: 195 }
     validates :image, presence: true
-  
+
+    #enum カラムに番号振るやつ
+    enum status: { published: 0, draft: 1 }
 
     #アソシエーション いいね
     def favorited_by?(user)

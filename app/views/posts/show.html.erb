@@ -14,7 +14,7 @@
     <div class="container d-flex mt-5">
     <div class="d-flex">
       <div class="d-block">
-        <p class="caption"><%= post.user.name %></p>
+        <p class="caption"><%= @post.user.name %></p>
         <% if @post.image.attached? %>
           <%= image_tag @post.image, style: "width:400px; height:300px; object-fit:cover;" %>
         <% end %>

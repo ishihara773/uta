@@ -80,6 +80,11 @@ gem "sassc-rails"
 #13章
 gem 'devise'
 gem 'kaminari'
+#日本語化
+gem 'enum_help'
+#deviceの日本語化
+gem 'devise-i18n'
+
 
 
 

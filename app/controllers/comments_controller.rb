@@ -1,16 +1,18 @@
 class CommentsController < ApplicationController
     def create
-        post = Post.find(params[:post_id])
-        comment = current_user.comments.new(comment_params)
+        @post = Post.find(params[:post_id])
+        @comment = current_user.comments.new(comment_params)
         #↑下記でも可　省略している
         #comment = PostComment.new(post_comment_params)
         #comment.user_id = current_user.id
+        @comment.post = @post #CGPT 提案
         if @comment.save
-            redirect_to post_path(post)
+            redirect_to post_path(@post)
         else
             @post = Post.find(params[:post_id])
             @comments = @post.comments.page(params[:page]).per(7).reverse_order
             render 'posts/show', status: :unprocessable_entity
+        end
     end
     
     def destroy

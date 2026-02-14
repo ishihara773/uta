@@ -36,4 +36,6 @@ class User < ApplicationRecord
   def following?(user)
     following_user.include?(user)
   end  
+  #エラーメッセージの日本語化
+  validates :name, presence: true
 end

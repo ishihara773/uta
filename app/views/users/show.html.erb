@@ -43,8 +43,8 @@
       <% @posts.each do |post| %>
         <div class="one-post col-sm-3 mb-3">
           <%= link_to post_path(post) do %>
-            <% if @post.image.attached? %>
-              <%= image_tag @post.image, style: "width:400px; height:300px; object-fit:cover;" %>
+            <% if post.image.attached? %>
+              <%= image_tag post.image, style: "width:400px; height:300px; object-fit:cover;" %>
             <% end %>
             <p class="caption mb-0"><%= post.title %></p>
             <p class="caption"><%= "#{post.comments.count} コメント" %></p>
