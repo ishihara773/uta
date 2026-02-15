@@ -1,12 +1,15 @@
-<div class="cover align-middle">
-  <div class="text-center">
-    <p class="sub-title">〜歌詞を共有する〜</p>
-    <h1 class="title mb-2">詩</h1>
-    <%= link_to new_user_registration_path do %>
-      <h2 class="btn btn-primary mr-2">新規登録</h2>
-    <% end %>
-    <%= link_to new_user_session_path do %>
-      <h2 class="btn btn-success ml-2">ログイン</h2>
-    <% end %>
+<div class="top-page">
+  <div class="left-bg"></div>
+  <div class="right-bg"></div>
+
+  <div class="content">
+    <div class="logo-wrapper">
+      <%= image_tag "top.png", class: "top-logo" %>
+    </div>
+
+    <div class="btn-row">
+      <%= link_to "新規登録", new_user_registration_path, class: "top-btn signup" %>
+      <%= link_to "ログイン", new_user_session_path, class: "top-btn login" %>
+    </div>
   </div>
 </div>

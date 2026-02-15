@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+    
     #このコントローラが動作する前にauthenticate_user!：ログインしてなければ、ログインページへ移動(devise機能)except：一部除く(ここでは、topページは権限なしでアクセスできる)
-    before_action :authenticate_user!,except: [:top] 
+    before_action :authenticate_user!,except: [:top, :play] 
     before_action :configure_permitted_parameters, if: :devise_controller?
 
     protected

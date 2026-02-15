@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   #get 'users/index'
   #get 'users/show'
   devise_for :users
+  # 追加：PLAYページ
+  get "/play", to: "homes#play"
+
+  # 追加：新規登録/ログインへ分岐するTOP（今までのtop）
+  #get "/top", to: "homes#top"   # ← 今の top を /top として使う
+  get "/top", to: "homes#top", as: :top
+  # root を PLAY にする
+  root to: "homes#play"
+
   resources :users, only:[:index, :show, :edit, :update] do
     member do
       get :follows, :followers
@@ -28,6 +37,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   #get 'top' => 'homes#top'
-  root :to => 'homes#top'   #この行を記述
+ # root :to => 'homes#top'   #この行を記述
 
 end

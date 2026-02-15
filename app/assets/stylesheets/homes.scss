@@ -1,22 +1,128 @@
-.title {
-    font-family: cursive;
-  }
-  
-  .sub-title {
-    font-family: serif;
-  }
-  
-  .cover {
-    height: 100%;
-    width: 100%;
-    display: table;
-    background-image: url(/assets/siro.jpg);
-    background-color:rgba(255,255,255,0.4);
-    background-blend-mode:lighten;
-    background-size: 100% 100%;
-  }
-  
-  .text-center {
-    display: table-cell;
-    vertical-align: middle;
-  }
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.top-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* 左右背景 */
+.left-bg, .right-bg {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.left-bg {
+  left: 0;
+  background-image: image-url("5051.jpeg");
+}
+
+.right-bg {
+  right: 0;
+  background-image: image-url("5050.jpeg");
+}
+
+/* 中央コンテンツ */
+.content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ロゴ */
+.logo-wrapper {
+  margin-bottom: 50px;
+}
+
+.top-logo {
+  width: 320px;
+  max-width: 70vw;
+  height: auto;
+  display: block;
+
+  /* “見えない”対策：白背景に埋もれる場合でも浮く */
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
+}
+
+/* ボタン */
+.btn-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  padding: 14px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.signup {
+  background: #08184c;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.login {
+  background: #fff;
+  color: #0b1e5b;
+  border: 2px solid #0b1e5b;
+}
+
+.top-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+
+//play
+/* /play */
+.play-page {
+  position: relative;
+  min-height: 100vh;
+
+  background-image: image-url("la.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* クリックエリア（透明ボタン） */
+.play-btn {
+  position: absolute;
+  top: 86.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s ease;
+}
+
+.play-btn:hover {
+  background: rgba(255, 255, 255, 0.454);
+}
