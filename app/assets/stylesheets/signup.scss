@@ -4,13 +4,70 @@
   text-decoration: none;
 }
 
-.bg {
-  width: 100%;
-  height: 100%;
-  padding-top: 70px;
-  background: linear-gradient(to right, #0b1e5b, rgba(0, 107, 139, 0.12));
+/* 左右背景 */
+.left-bg, .right-bg {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
+.left-bg {
+  left: 0;
+  background-image: image-url("5051.jpeg");
+}
+
+.right-bg {
+  right: 0;
+  background-image: image-url("5050.jpeg");
+}
+
+
+//背景　一番後ろに
+.bg {
+  position: relative;
+  min-height: 120vh;   /* ← 100vh より大きくする */
+  padding-bottom: 120px; /* 下余白 */
+  z-index: 1
+}
+
+//新規登録
+.box {
+  position: absolute;
+  top: 5%;
+  right: 63%;                 
+  width: 350px;
+  height: 400px;
+
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background: white;
+  box-shadow: 0 8px 30px rgba(244, 244, 244, 0.15);
+}
+
+//ログイン
+.box-lg {
+  position: absolute;
+  top: 15%;
+  width: 350px;
+  height: 400px;
+  left: 65%;
+
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background: white;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+//.bg {  width: 100%;  height: 100%;  padding-top: 70px;  background: linear-gradient(to right, #0b1e5b, rgba(0, 107, 139, 0.12));}
+
+
+//新規登録box//
 .box {
   width: 350px;
   height: 400px;
@@ -24,7 +81,24 @@
   background-color: white;
 }
 
-h1 {
+//ログインBOX//
+.box-lg {
+  width: 350px;
+  height: 400px;
+  margin: auto;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.box-inner-lg {
+  padding: 20px 26px;
+  background-color: white;
+}
+
+
+//共通
+
+.h1 {
   font-weight: 400;
   font-size: 28px;
   line-height: 1.2;
@@ -126,4 +200,61 @@ h1 {
 
 .box-newusr a:hover {
   background: #e7e9ec;
+}
+
+
+//ロゴログイン//
+.logo-wrapper-log {
+  position: relative;
+}
+
+.log-logo {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 320px;
+  max-width: 70vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
+}
+
+logo-caption-lpg {
+  position: absolute;
+
+  top: 450px;   /* 下へ */
+  right: 75%;
+  transform: translateX(-50%);
+
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; 
+}
+
+//ロゴ新規登録//
+.logo-wrapper-lg {
+  position: relative;
+}
+
+.top-logo {
+  position: absolute;
+  top: 240px;  
+  left: 75%;
+  transform: translate(-50%, -50%);
+
+  width: 320px;
+  max-width: 70vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
+}
+
+.logo-caption {
+  position: absolute;
+
+  top: 450px;   /* 下へ */
+  left: 75%;
+  transform: translateX(-50%);
+
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; 
 }

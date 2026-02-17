@@ -1,10 +1,18 @@
 <div class="bg">
-  <div class="box">
-    <div class="box-inner">
-      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <% flash.each do |message_type, message| %>
-        <%= content_tag :div, message, class: message_type %>
-      <% end %>
+  <div class="left-bg"></div>
+  <div class="right-bg"></div>
+
+    <div class="logo-wrapper-log">
+      <%= image_tag "log1.png", class: "log-logo" %>
+       <p class="logo-caption-log">歌詞でつながる、音楽のある毎日。</p>
+    </div>
+
+    <div class="box-lg">
+      <div class="box-inner-lg">
+        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: message_type %>
+        <% end %>
       <h1>ログイン</h1>
       <div class="box-email">
         <%= f.label :email, "Eメール" %><br />

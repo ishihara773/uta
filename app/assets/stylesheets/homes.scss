@@ -54,7 +54,7 @@ html, body {
   height: auto;
   display: block;
 
-  /* “見えない”対策：白背景に埋もれる場合でも浮く */
+  /*白背景に埋もれる場合でも*/
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
 }
 
