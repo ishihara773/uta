@@ -30,12 +30,13 @@
  //ヘッダー
 header {
   display: flex;
-  background-color: rgb(5, 2, 100);
+  background-color: rgb(8, 5, 48);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 header div:first-child {
   margin-right: auto;
-  font-size: 25px;
+  font-size: 23px;
 }
 
 header div:last-child {
@@ -47,9 +48,6 @@ header div {
   line-height: 30px;
 }
 
-a:hover {
-  color: aqua!important;
-}
 
 #head-top {
   text-decoration: none;
@@ -66,8 +64,7 @@ a {
 }
 
 a:hover {
-  color: aqua!important;
-  text-decoration: underline;
+  color: rgb(209, 217, 232)!important;
 }
 
 

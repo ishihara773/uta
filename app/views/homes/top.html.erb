@@ -1,15 +1,13 @@
-<div class="top-page">
-  <div class="left-bg"></div>
-  <div class="right-bg"></div>
+<div class="top">
+  <div class="top__bg top__bg--left"></div>
+  <div class="top__bg top__bg--right"></div>
 
-  <div class="content">
-    <div class="logo-wrapper">
-      <%= image_tag "top.png", class: "top-logo" %>
-    </div>
+  <div class="top__content">
+    <%= image_tag "top.png", class: "top__logo" %>
 
-    <div class="btn-row">
-      <%= link_to "新規登録", new_user_registration_path, class: "top-btn signup" %>
-      <%= link_to "ログイン", new_user_session_path, class: "top-btn login" %>
+    <div class="top__buttons">
+      <%= link_to "新規登録", new_user_registration_path, class: "top__btn top__btn--signup" %>
+      <%= link_to "ログイン", new_user_session_path, class: "top__btn top__btn--login" %>
     </div>
   </div>
 </div>

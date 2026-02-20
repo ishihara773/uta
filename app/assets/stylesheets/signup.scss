@@ -203,15 +203,16 @@
 }
 
 
-//ロゴログイン//
+//* ロゴ全体の基準 */
 .logo-wrapper-log {
   position: relative;
 }
 
+/* ロゴ画像 */
 .log-logo {
   position: absolute;
-  top: 50%;
-  right: 50%;
+  top: 270px;
+  left: 25%;
   transform: translate(-50%, -50%);
 
   width: 320px;
@@ -221,11 +222,25 @@
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
 }
 
-logo-caption-lpg {
+/* キャプション文字 */
+.logo-caption-log {
+  position: absolute;
+  top: 70px;      /* ここは見た目で微調整 */
+  left: 19%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  color: #ffffff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+
+.logo-caption {
   position: absolute;
 
-  top: 450px;   /* 下へ */
-  right: 75%;
+  top: 50px;   /* 下へ */
+  left: 75%;
   transform: translateX(-50%);
 
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; 

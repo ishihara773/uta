@@ -3,14 +3,15 @@ html, body {
   height: 100%;
 }
 
-.top-page {
+/* ===== TOPページ専用（他と被らない） ===== */
+.top {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
-/* 左右背景 */
-.left-bg, .right-bg {
+/* 背景（左右） */
+.top__bg {
   position: absolute;
   top: 0;
   width: 50%;
@@ -21,55 +22,62 @@ html, body {
   z-index: 0;
 }
 
-.left-bg {
+.top__bg--left {
   left: 0;
   background-image: image-url("5051.jpeg");
 }
 
-.right-bg {
+.top__bg--right {
   right: 0;
   background-image: image-url("5050.jpeg");
 }
 
-/* 中央コンテンツ */
-.content {
+/* 中央コンテンツ：画面ど真ん中固定 */
+.top__content {
   position: relative;
   z-index: 2;
 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  gap: 40px;         /* ロゴとボタンの間 */
+  transform: translateY(-40px); /* ← “ちょい上” 調整（好みで -20〜-80） */
 }
 
-/* ロゴ */
-.logo-wrapper {
-  margin-bottom: 50px;
-}
+/* ロゴ：絶対に勝つ（上書き対策） */
+.top__logo {
+  display: block !important;
+  width: 300px !important;
+  max-width: 70vw !important;
+  height: auto !important;
+  margin: 0 auto !important;
 
-.top-logo {
-  width: 320px;
-  max-width: 70vw;
-  height: auto;
-  display: block;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
 
-  /*白背景に埋もれる場合でも*/
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.15));
 }
 
 /* ボタン */
-.btn-row {
+.top__buttons {
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
 }
 
-.top-btn {
+.top__btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
   width: 220px;
   padding: 14px 0;
   border-radius: 8px;
@@ -78,25 +86,24 @@ html, body {
   transition: 0.3s ease;
 }
 
-.signup {
+.top__btn--signup {
   background: #08184c;
   color: #fff;
   border: 2px solid #fff;
 }
 
-.login {
+.top__btn--login {
   background: #fff;
   color: #0b1e5b;
   border: 2px solid #0b1e5b;
 }
 
-.top-btn:hover {
+.top__btn:hover {
   opacity: 0.85;
   transform: translateY(-2px);
 }
 
 
-//play
 /* /play */
 .play-page {
   position: relative;

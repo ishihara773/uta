@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Traveler</title>
+    <title>詩</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,14 +14,14 @@
   <body>
     <% if user_signed_in? %> 
       <header>
-        <div><%= link_to root_path, class: "text-white nav-link" do %>traveler<% end %></div>
-        <div><%= link_to "トップ", root_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "投稿する", new_post_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "投稿一覧", posts_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "下書き一覧", confirm_posts_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "ユーザ一覧", users_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white nav-link" %></div>
-        <div><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white nav-link" %></div>
+        <div><%= link_to root_path, class: "text-white nav-link" do %>詩<% end %></div>
+        <div><%= link_to "TOP", root_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "⌂", posts_path, class: "text-white nav-link" %></div>
+         <div><%= link_to "🖊", new_post_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "▷", confirm_posts_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "MEMBERS", users_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "MYPAGE", user_path(current_user.id), class: "text-white nav-link" %></div>
+        <div><%= link_to "LOGOUT", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white nav-link" %></div>
       </header>
     <% end %>
     <%= yield %>
