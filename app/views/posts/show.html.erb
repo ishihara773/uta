@@ -15,7 +15,6 @@
     <% end %>
 
     <div class="post-show-grid">
-
       <div class="post-show-card">
         <div class="post-show-header">
           <div class="post-avatar">
@@ -61,14 +60,14 @@
           <%= link_to post_favorites_path(@post),
               data: { turbo_method: :delete },
               class: "favorite_btn liked" do %>
-            ♥<%= @post.favorites.count %> いいね
+            ♥<%= @post.favorites.count %> 
           <% end %>
         <% else %>
   
         <%= link_to post_favorites_path(@post),
             data: { turbo_method: :post },
             class: "favorite_btn" do %>
-          ♡<%= @post.favorites.count %> いいね
+          ♡<%= @post.favorites.count %> 
          <% end %>
         <% end %>
 
@@ -83,10 +82,12 @@
         <!-- ボタン -->
         <div class="post-show-buttons">
           <% if @post.user == current_user %>
-            <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info" %>
-            <%= link_to '削除する', post_path(@post.id), data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
+            <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-edit" %>
+            <%= link_to '削除する', post_path(@post.id),
+                data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" },
+                class: "btn btn-delete" %>
+            <%= link_to '投稿一覧へ', posts_path, class: "btn btn-back" %>
           <% end %>
-          <%= link_to '投稿一覧へ', posts_path, class: "btn btn-dark" %>
         </div>
 
       </div>

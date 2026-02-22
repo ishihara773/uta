@@ -17,6 +17,7 @@
     background-size: 100% 100%;
 }
 
+
 /* ユーザー詳細：投稿カードを整える（サムネ/アバターを固定） */
 .cover-user-show .post-item{
   display: grid;                      /* ←これが必須 */
@@ -91,6 +92,14 @@
 .cover-user-show .post-item:hover {
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
+
+.post-list-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0px 0;
+  width: 100%;
+}
+
 
 //プロフィール編集
 .cover-user-edit {
