@@ -17,6 +17,81 @@
     background-size: 100% 100%;
 }
 
+/* ユーザー詳細：投稿カードを整える（サムネ/アバターを固定） */
+.cover-user-show .post-item{
+  display: grid;                      /* ←これが必須 */
+  grid-template-columns: 52px 1fr 120px;
+  gap: 12px;
+  align-items: start;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 左のアバターも固定（大きくなりすぎ防止） */
+.cover-user-show .post-list-avatar{
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* 画像が親に収まるように */
+.cover-user-show .post-list-avatar-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 右のサムネ固定 */
+.cover-user-show .post-list-thumb{
+  width: 120px;
+  height: 84px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  justify-self: end;
+}
+
+.cover-user-show .post-list-thumb-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* テキストがはみ出してレイアウト崩れないように */
+.cover-user-show .post-list-main{
+  min-width: 0;
+}
+
+.cover-user-show .post-list-lyrics{
+  overflow: hidden;
+}
+
+.cover-user-show .post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+  margin-bottom: 14px;
+
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: 0.2s ease;
+}
+
+.cover-user-show .post-item:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
 //プロフィール編集
 .cover-user-edit {
     height: 100%;
@@ -30,3 +105,59 @@
 .profile {
     padding: 15px;
 }
+
+/* ユーザー詳細：サムネを固定サイズで整える */
+.cover-user-show .post-item{
+  grid-template-columns: 72px 1fr 120px; /* 右の枠を固定 */
+}
+
+.cover-user-show .post-list-thumb{
+  width: 120px;
+  height: 84px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  justify-self: end;
+}
+
+.cover-user-show .post-list-thumb-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* はみ出した分はトリミング */
+  display: block;
+}
+
+/* ユーザー一覧 */
+.cover-user-index .one-post a{
+  display: flex;
+  align-items: center;         /* ←上下中央 */
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+.cover-user-index .one-post a .d-flex{
+  display: flex;
+  align-items: center;         /* ←上下中央 */
+  gap: 12px;
+}
+
+.cover-user-index .one-post a .profile-img{
+  margin-top: 0 !important;    /* mt-3 を潰す */
+}
+
+.cover-user-index .one-post a .h4{
+  margin-top: 0 !important;    /* mt-4 を潰す */
+  margin-bottom: 0 !important;
+}
+
+.cover-user-index .one-post a p{
+  margin: 0 !important;
+}
+
+.cover-user-index .one-post a > p.caption{
+  white-space: nowrap;
+  text-align: right;
+}
+

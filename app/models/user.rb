@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   #プロフィール
   has_one_attached :profile_image
+  has_one_attached :avatar
+
   #フォローフォロワー
   has_many :follower, class_name: "Relationship"
   has_many :followed, class_name: "Relationship"

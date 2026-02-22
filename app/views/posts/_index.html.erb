@@ -1,4 +1,4 @@
-<div class="row mt-3 mb-3 align-self-end">
+<div class="row mt-3 mb-2 align-self-end">
       <%= form_with method: :get, local: true do |f| %>
         <%= f.text_field :search %>
         <%= f.submit '検索する', name: nil %>
@@ -6,7 +6,7 @@
     </div>
     <div class="row mt-5 index-left w-100">
       <% @posts.each do |post| %>
-        <div class="one-post col-sm-4 mb-3">
+        <div class="one-post col-sm-3 mb-3">
           <%= link_to post_path(post) do %>
             <p class="caption"><%= post.user.name %></p>
             <% if post.image.attached? %>

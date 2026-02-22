@@ -1,8 +1,55 @@
 <div class="cover-index">
   <div class="container d-flex flex-column align-items-center">
+
     <div class="row mt-5">
       <h1 class="font-weight-normal">下書き一覧</h1>
     </div>
-    <%= render 'index', posts: @posts %>
+
+    <div class="w-100 post-list-wrap">
+      <div class="post-list">
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post), class: "post-item" do %>
+
+            <div class="post-list-avatar">
+              <% if post.user.profile_image.attached? %>
+                <%= image_tag post.user.profile_image, class: "post-list-avatar-img" %>
+              <% else %>
+                <span class="post-list-avatar-initial"><%= post.user.name.to_s.first %></span>
+              <% end %>
+            </div>
+
+            <div class="post-list-main">
+              <div class="post-list-name"><%= post.user.name %></div>
+
+              <div class="post-list-lyrics">
+                <%= simple_format(h(post.lyrics.to_s)) %>
+              </div>
+
+              <div class="post-list-divider"></div>
+
+              <div class="post-list-sub">
+                <span class="post-list-title"><%= post.title %></span>
+                <% if post.artist.present? %>
+                  <span class="post-list-sep"> / </span>
+                  <span class="post-list-artist"><%= post.artist %></span>
+                <% end %>
+              </div>
+            </div>
+
+            <% if post.image.attached? %>
+              <div class="post-list-thumb">
+                <%= image_tag post.image, class: "post-list-thumb-img" %>
+              </div>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="mt-3 d-flex justify-content-center">
+        <%= paginate @posts %>
+      </div>
+    </div>
+
   </div>
 </div>

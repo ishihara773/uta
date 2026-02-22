@@ -2,7 +2,7 @@
   <div class="container d-flex flex-column align-items-center">
 
     <div class="row mt-5">
-      <h1 class="font-weight-normal">新規投稿</h1>
+      <h1 class="font-weight-normal">NEW POST
     </div>
 
     <%= form_with model: @post, local: true do |f| %>
@@ -14,31 +14,36 @@
              <%= message %>
           <% end %>
         </div>
-      <% end %>
+      <% end %> <div class="form-group mb-3">
 
-        <div class="form-group mb-3">
-          <label class="form-label">タイトル</label>
-          <%= f.text_field :title, class: "form-control" %>
-        </div>
+      <label class="form-label">タイトル</label>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label class="form-label">アーティスト</label>
+        <%= f.text_field :artist, class: "form-control" %>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label class="form-label">歌詞</label>
+        <%= f.text_area :lyrics, rows: 5, class: "form-control" %>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label class="form-label">コメント</label>
+        <%= f.text_area :text, rows: 3, class: "form-control" %>
+      </div>
 
-        <div class="form-group mb-3">
-          <label class="form-label">歌詞</label>
-          <%=f.text_area :text, rows: 3, class: "form-control" %>
-        </div>
-
-        <div class="form-group mb-3">
-          <label class="form-label">コメント</label>
-          <%=f.text_area :text, rows: 5, class: "form-control" %>
-        </div>
-
-        <div class="form-group mb-3">
-          <label class="form-label">画像</label><br>
-          <%= f.file_field :image %>
-        </div>
+      <div class="form-group mb-3">
+        <label class="form-label">画像</label><br>
+        <%= f.file_field :image %>
+      </div>
 
         <div class="form-group">
           <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: "custom-select w-25 mb-3"} %>
         </div>
+
 
         <%= f.submit '投稿する', class: "btn btn-success" %>
       <% end %>
