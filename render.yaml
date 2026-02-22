@@ -1,0 +1,24 @@
+databases:
+  - name: 詩
+    databaseName: uta1
+    user: uta1
+    region: Oregon
+
+services:
+  - type: web
+    name: uta1
+    env: ruby
+    region: Oregon
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    preDeployCommand: ./bin/rails db:migrate
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: uta1
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
